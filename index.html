@@ -3,502 +3,1023 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cupones del Día - Descuentos hoy en Mercado Libre</title>
-  <meta name="description" content="Cupones de Mercado Libre actualizados hoy. Elegí el cupón que más te convenga y ahorrá en tu compra.">
+  <title>Cupones y Listas del Día — Meñique Tips (cupondeldia.com.ar)</title>
+  <meta name="description" content="Encontrá las listas de productos seleccionadas y los cupones de descuento activos hoy por Meñique Tips. Tocá y aprovechá las ofertas desde el enlace.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#fe4a2b">
+
+  <!-- Open Graph / WhatsApp / Redes -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Meñique Tips — Cupón del Día">
+  <meta property="og:title" content="Cupones y Listas de Productos del Día — Meñique Tips">
+  <meta property="og:description" content="Mirá las listas de productos recomendados y los cupones de descuento disponibles hoy.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cupones y Listas de Productos del Día — Meñique Tips">
+  <meta name="twitter:description" content="Mirá las listas de productos recomendados y los cupones de descuento disponibles hoy.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --brand: #fe4a2b;
-      --brand-dark: #d93a1e;
-      --mp-blue: #009ee3;
-      --mp-blue-dark: #0077c8;
-      --temu: #fb7701;
-      --wa-green: #25d366;
-      --wa-green-dark: #128c7e;
-      --text-dark: #222222;
-      --text-muted: #666666;
+      --bg: #FAF9F8;
+      --surface: #FFFFFF;
+      --surface-alt: #F3F1EF;
+      --text: #1D1D1F;
+      --text-secondary: #5C5C63;
+      --line: #E4E1DE;
+
+      /* Color principal #fe4a2b */
+      --primary: #fe4a2b;
+      --primary-hover: #e43b1d;
+      --primary-active: #c93217;
+      --primary-soft: rgba(254, 74, 43, 0.10);
+      --primary-border: rgba(254, 74, 43, 0.28);
+      --primary-glow: rgba(254, 74, 43, 0.52);
+
+      /* WhatsApp */
+      --whatsapp: #128C4A;
+      --whatsapp-hover: #0E723B;
+      --whatsapp-glow: rgba(18, 140, 74, 0.45);
+
+      /* Plataforma externa (Temu) - Tono neutro oscuro diferenciado */
+      --external-bg: #222226;
+      --external-accent: #ff6f52;
     }
 
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--brand);
-      color: var(--text-dark);
-      line-height: 1.5;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 16px 96px;
     }
 
-    /* Encabezado */
-    header {
-      background-color: var(--brand);
-      padding: 28px 16px 12px;
+    /* Aviso superior de sitio independiente (Cumplimiento de afiliados) */
+    .top-disclaimer {
+      width: 100%;
+      max-width: 680px;
+      background-color: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      color: var(--text-secondary);
       text-align: center;
-      color: #fff;
     }
 
-    header h1 {
-      font-size: 1.9rem;
-      font-weight: 800;
-      margin-bottom: 6px;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-
-    header p {
-      font-size: 1rem;
-      max-width: 600px;
-      margin: 0 auto 14px;
-      opacity: 0.95;
-    }
-
-    .live-tag {
-      display: inline-block;
-      background-color: #fff;
-      color: var(--brand-dark);
-      font-size: 0.8rem;
-      font-weight: 800;
-      padding: 5px 14px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+    .top-disclaimer strong {
+      color: var(--text);
+      font-weight: 700;
     }
 
     .container {
-      max-width: 1020px;
-      margin: 0 auto;
-      padding: 24px 16px 110px; /* espacio abajo para el botón flotante */
-    }
-
-    .section-title {
-      font-size: 1.35rem;
-      font-weight: 800;
-      margin-bottom: 18px;
-      text-align: center;
-      color: #fff;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-
-    /* Tarjetas de cupones Mercado Libre */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-
-    .coupon-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 24px 18px 20px;
-      text-align: center;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+      width: 100%;
+      max-width: 680px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
-      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+      gap: 32px;
     }
 
-    .coupon-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.25);
+    /* Encabezado */
+    .header-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
     }
 
-    .coupon-label {
-      font-size: 0.8rem;
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background-color: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+      color: var(--primary);
+      font-size: 0.78rem;
       font-weight: 700;
-      color: var(--text-muted);
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
-      margin-bottom: 6px;
+    }
+
+    h1 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.9rem, 6.5vw, 2.65rem);
+      line-height: 1.06;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      text-wrap: balance;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      max-width: 540px;
+      line-height: 1.45;
+    }
+
+    .notice-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .notice-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      display: inline-block;
+      box-shadow: 0 0 8px var(--primary);
+    }
+
+    /* Títulos de sección */
+    .section-block {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+    }
+
+    .section-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.35rem, 4.8vw, 1.75rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .section-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       TARJETAS Y GRILLAS
+       ========================================================================== */
+    .coupons-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      width: 100%;
+    }
+
+    @media (min-width: 580px) {
+      .coupons-grid.multi-items {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    }
+
+    .lists-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      width: 100%;
+    }
+
+    .card {
+      background-color: var(--surface);
+      border: 1.5px solid var(--line);
+      border-radius: 22px;
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+      box-shadow: 0 6px 20px -6px rgba(29, 29, 31, 0.06);
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 0.28s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03) translateY(-4px);
+      box-shadow: 0 18px 36px -8px rgba(254, 74, 43, 0.18),
+                  0 8px 18px -6px rgba(29, 29, 31, 0.08);
+      border-color: var(--primary-border);
+    }
+
+    /* Tarjeta de cupón general */
+    .coupon-badge {
+      display: inline-block;
+      background-color: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
     }
 
     .coupon-amount {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--brand);
-      line-height: 1.1;
-      margin-bottom: 6px;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.85rem, 6vw, 2.35rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--text);
     }
 
     .coupon-min {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background-color: var(--surface-alt);
       padding: 6px 12px;
-      border: 2px dashed #e0e0e0;
-      border-radius: 8px;
-    }
-
-    .coupon-min strong {
-      color: var(--text-dark);
-    }
-
-    .btn {
-      display: block;
+      border-radius: 10px;
       width: 100%;
-      background-color: var(--brand);
-      color: #fff;
-      text-decoration: none;
-      padding: 13px 16px;
-      border-radius: 8px;
+    }
+
+    .coupon-note {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.35;
+    }
+
+    /* Tarjeta de Lista de Productos (Sección principal) */
+    .list-card {
+      position: relative;
+      align-items: stretch;
+      text-align: left;
+      padding: 24px 20px;
+      border: 2px solid var(--primary-border);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F7 100%);
+    }
+
+    .list-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .list-coupon-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--primary);
+      color: #FFFFFF;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+
+    .list-min-pill {
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--surface-alt);
+      color: var(--text);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+    }
+
+    .list-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
       font-weight: 800;
-      font-size: 1.05rem;
-      letter-spacing: 0.5px;
-      margin-top: auto;
-      transition: background 0.2s, transform 0.1s;
-      box-shadow: 0 4px 10px rgba(254, 74, 43, 0.35);
+      font-size: clamp(1.25rem, 4.5vw, 1.55rem);
+      line-height: 1.18;
+      color: var(--text);
+      letter-spacing: -0.02em;
     }
 
-    .btn:hover {
-      background-color: var(--brand-dark);
-      transform: translateY(-1px);
+    .list-description {
+      font-size: 0.92rem;
+      line-height: 1.45;
+      color: var(--text-secondary);
     }
 
-    /* Cupón acumulable - azul Mercado Pago */
-    .mp-card {
-      background: linear-gradient(135deg, var(--mp-blue) 0%, var(--mp-blue-dark) 100%);
-      color: #fff;
-      border-radius: 14px;
-      padding: 28px 20px;
-      text-align: center;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.22);
-      margin-bottom: 40px;
-    }
-
-    .mp-badge {
-      display: inline-block;
-      background: #fff;
-      color: var(--mp-blue-dark);
-      font-size: 0.8rem;
-      font-weight: 800;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-    }
-
-    .mp-card h2 {
-      font-size: 1.6rem;
-      font-weight: 900;
-      margin-bottom: 6px;
-    }
-
-    .mp-amount {
-      font-size: 2.6rem;
-      font-weight: 900;
-      line-height: 1.1;
-      margin: 8px 0;
-    }
-
-    .mp-card .mp-sub {
-      font-size: 1rem;
-      opacity: 0.95;
-      margin-bottom: 4px;
-    }
-
-    .mp-card .mp-min {
+    /* ==========================================================================
+       BOTONES Y EFECTOS (Deep Glow + Destello de luz + Hover scale 1.05)
+       ========================================================================== */
+    .btn {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      width: 100%;
+      min-height: 54px;
+      padding: 14px 20px;
+      border-radius: 16px;
+      font-family: 'DM Sans', sans-serif;
       font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .mp-card .mp-hurry {
-      font-size: 0.92rem;
-      max-width: 520px;
-      margin: 0 auto 20px;
-      opacity: 0.95;
-    }
-
-    .btn-white {
-      display: inline-block;
-      width: auto;
-      min-width: 240px;
-      background: #fff;
-      color: var(--mp-blue-dark);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .btn-white:hover {
-      background: #f0f8ff;
-    }
-
-    /* Temu */
-    .temu-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 28px 20px;
-      text-align: center;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-      border: 3px solid var(--temu);
-      margin-bottom: 40px;
-    }
-
-    .temu-badge {
-      display: inline-block;
-      background: var(--temu);
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 800;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-    }
-
-    .temu-card h2 {
-      font-size: 1.5rem;
-      margin-bottom: 6px;
-      color: #111;
-    }
-
-    .temu-amount {
-      font-size: 2.4rem;
-      font-weight: 900;
-      color: var(--temu);
-      margin: 6px 0;
-    }
-
-    .temu-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 18px;
-    }
-
-    .btn-temu {
-      display: inline-block;
-      width: auto;
-      min-width: 260px;
-      background: var(--temu);
-      box-shadow: 0 4px 10px rgba(251, 119, 1, 0.4);
-    }
-
-    .btn-temu:hover {
-      background: #dc6600;
-    }
-
-    /* Bloque SEO */
-    .seo-info {
-      background: #fff;
-      border-radius: 10px;
-      padding: 24px;
-      margin-top: 20px;
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
-
-    .seo-info h3 {
-      color: #222;
-      margin-bottom: 8px;
-      font-size: 1.1rem;
-    }
-
-    .seo-info p {
-      margin-bottom: 14px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 24px 16px 100px;
-      font-size: 0.8rem;
-      color: #fff;
-      opacity: 0.9;
-    }
-
-    /* Botón flotante de WhatsApp con animación de notificación */
-    .wa-float {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--wa-green);
-      color: #fff;
+      line-height: 1.2;
       text-decoration: none;
-      padding: 12px 18px 12px 14px;
-      border-radius: 50px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-      max-width: calc(100vw - 32px);
-      animation: wa-pulse 2s infinite, wa-wiggle 5s infinite;
-    }
-
-    .wa-float:hover {
-      background: var(--wa-green-dark);
-    }
-
-    .wa-icon {
-      position: relative;
-      flex-shrink: 0;
-      width: 38px;
-      height: 38px;
-    }
-
-    .wa-icon svg {
-      width: 38px;
-      height: 38px;
-      fill: #fff;
-    }
-
-    .wa-badge {
-      position: absolute;
-      top: -6px;
-      right: -8px;
-      background: #ff3b30;
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 800;
-      min-width: 20px;
-      height: 20px;
-      border-radius: 10px;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid #fff;
-      animation: wa-pop 1.5s infinite;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1),
+                  background-color 0.2s ease,
+                  box-shadow 0.24s ease;
     }
 
-    .wa-text {
-      font-size: 0.85rem;
+    .btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px -4px var(--primary-glow),
+                  0 3px 10px 0 rgba(254, 74, 43, 0.28),
+                  inset 0 1px 1px rgba(255, 255, 255, 0.35);
+      animation: deepGlowPrimary 3.2s ease-in-out infinite;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: scale(1.05);
+      box-shadow: 0 14px 34px -2px rgba(254, 74, 43, 0.72),
+                  0 6px 16px 0 rgba(254, 74, 43, 0.4),
+                  inset 0 1px 1px rgba(255, 255, 255, 0.45);
+    }
+
+    .btn-primary:active {
+      background-color: var(--primary-active);
+      transform: scale(0.98);
+    }
+
+    /* Botón grande de Canal de WhatsApp */
+    .btn-whatsapp-hero {
+      min-height: 64px;
+      padding: 16px 24px;
+      border-radius: 18px;
+      background-color: var(--whatsapp);
+      color: #FFFFFF;
+      font-size: clamp(1rem, 3.8vw, 1.15rem);
       font-weight: 800;
-      line-height: 1.25;
-      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      box-shadow: 0 10px 28px -4px var(--whatsapp-glow),
+                  0 4px 12px 0 rgba(18, 140, 74, 0.28),
+                  inset 0 1px 1px rgba(255, 255, 255, 0.35);
+      animation: deepGlowWhatsapp 3.6s ease-in-out infinite;
     }
 
-    .wa-text small {
-      display: block;
+    .btn-whatsapp-hero svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .btn-whatsapp-hero:hover {
+      background-color: var(--whatsapp-hover);
+      transform: scale(1.05);
+      box-shadow: 0 14px 36px -2px rgba(18, 140, 74, 0.68),
+                  0 6px 16px 0 rgba(18, 140, 74, 0.38);
+    }
+
+    .btn-whatsapp-hero:active {
+      transform: scale(0.98);
+    }
+
+    /* Destello de luz que cruza los botones cada cierto tiempo */
+    .btn-shimmer::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 45%;
+      height: 200%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.38) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(25deg);
+      pointer-events: none;
+      animation: shimmerSweep 4.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes shimmerSweep {
+      0%, 65% {
+        left: -65%;
+      }
+      100% {
+        left: 135%;
+      }
+    }
+
+    @keyframes deepGlowPrimary {
+      0%, 100% {
+        box-shadow: 0 8px 24px -4px rgba(254, 74, 43, 0.48),
+                    0 3px 10px 0 rgba(254, 74, 43, 0.24),
+                    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+      }
+      50% {
+        box-shadow: 0 12px 34px 0px rgba(254, 74, 43, 0.78),
+                    0 5px 16px 0 rgba(254, 74, 43, 0.42),
+                    inset 0 1px 1px rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    @keyframes deepGlowWhatsapp {
+      0%, 100% {
+        box-shadow: 0 8px 24px -4px rgba(18, 140, 74, 0.42),
+                    0 3px 10px 0 rgba(18, 140, 74, 0.22),
+                    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      }
+      50% {
+        box-shadow: 0 12px 32px 0px rgba(18, 140, 74, 0.7),
+                    0 5px 15px 0 rgba(18, 140, 74, 0.36),
+                    inset 0 1px 1px rgba(255, 255, 255, 0.45);
+      }
+    }
+
+    .whatsapp-cta-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .microtext {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      line-height: 1.35;
+    }
+
+    /* ==========================================================================
+       SECCIÓN SEPARADA DE OTRA PLATAFORMA (TEMU)
+       ========================================================================== */
+    .external-platform-card {
+      width: 100%;
+      background-color: var(--external-bg);
+      color: #FFFFFF;
+      border-radius: 22px;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.25);
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow 0.28s ease;
+    }
+
+    .external-platform-card:hover {
+      transform: scale(1.03) translateY(-4px);
+      box-shadow: 0 18px 38px -6px rgba(0, 0, 0, 0.35);
+    }
+
+    .external-tag {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.14);
+      color: #FFD8CF;
       font-size: 0.72rem;
-      font-weight: 600;
-      opacity: 0.95;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 999px;
     }
 
-    @keyframes wa-pulse {
-      0%   { box-shadow: 0 6px 18px rgba(0,0,0,0.3), 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70%  { box-shadow: 0 6px 18px rgba(0,0,0,0.3), 0 0 0 18px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 6px 18px rgba(0,0,0,0.3), 0 0 0 0 rgba(37, 211, 102, 0); }
+    .external-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: clamp(1.3rem, 4.5vw, 1.6rem);
+      font-weight: 800;
+      color: #FFFFFF;
     }
 
-    @keyframes wa-wiggle {
-      0%, 88%, 100% { transform: rotate(0); }
-      90% { transform: rotate(-3deg); }
-      92% { transform: rotate(3deg); }
-      94% { transform: rotate(-3deg); }
-      96% { transform: rotate(3deg); }
+    .external-desc {
+      font-size: 0.88rem;
+      color: #D2D2D7;
+      max-width: 480px;
+      line-height: 1.45;
     }
 
-    @keyframes wa-pop {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.25); }
+    .btn-external {
+      background-color: var(--primary);
+      color: #FFFFFF;
+      max-width: 360px;
+      margin-top: 4px;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .wa-float, .wa-badge { animation: none; }
+    /* ==========================================================================
+       APARICIÓN SUAVE AL HACER SCROLL (Fade-in + Desplazamiento)
+       ========================================================================== */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       BOTÓN FLOTANTE DE WHATSAPP CON ANIMACIÓN DE NOTIFICACIÓN
+       ========================================================================== */
+    .floating-wa {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--whatsapp);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: 0 10px 28px rgba(18, 140, 74, 0.5),
+                  0 4px 10px rgba(0, 0, 0, 0.18);
+      transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1),
+                  background-color 0.2s ease;
+      animation: floatAttention 4.5s ease-in-out infinite;
+    }
+
+    .floating-wa:hover {
+      background-color: var(--whatsapp-hover);
+      transform: scale(1.06);
+    }
+
+    .floating-wa svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .floating-wa-badge {
+      position: absolute;
+      top: -5px;
+      right: -4px;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      background-color: var(--primary);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 800;
+      border-radius: 999px;
+      border: 2px solid #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      animation: badgePing 2s ease-in-out infinite;
+    }
+
+    @keyframes floatAttention {
+      0%, 86%, 100% {
+        transform: translateY(0);
+      }
+      90% {
+        transform: translateY(-5px);
+      }
+      95% {
+        transform: translateY(-2px);
+      }
+    }
+
+    @keyframes badgePing {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.16);
+      }
     }
 
     @media (max-width: 480px) {
-      header h1 { font-size: 1.5rem; }
-      .coupon-amount { font-size: 1.9rem; }
-      .mp-amount { font-size: 2.2rem; }
-      .wa-text { font-size: 0.78rem; }
+      .floating-wa-text {
+        display: none;
+      }
+      .floating-wa {
+        width: 58px;
+        height: 58px;
+        padding: 0;
+        justify-content: center;
+      }
+      .floating-wa svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    /* ==========================================================================
+       PIE DE PÁGINA (Avisos legales y de afiliados)
+       ========================================================================== */
+    .footer {
+      width: 100%;
+      max-width: 680px;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .legal-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.76rem;
+      line-height: 1.45;
+      color: var(--text-secondary);
+    }
+
+    .btn:focus-visible,
+    .floating-wa:focus-visible {
+      outline: 3px solid var(--text);
+      outline-offset: 3px;
+    }
+
+    /* Respetar prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .btn-shimmer::after {
+        display: none !important;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>🔥 Cupones del Día</h1>
-    <p>Cupones de descuento verificados y actualizados a diario</p>
-    <span class="live-tag" id="fecha-hoy">Activo Hoy</span>
-  </header>
+  <!-- AVISO SUPERIOR DE SITIO INDEPENDIENTE Y PROGRAMA DE AFILIADOS -->
+  <aside class="top-disclaimer" aria-label="Aviso de sitio independiente">
+    <strong>Sitio independiente y no oficial:</strong> Esta página es administrada por Meñique Tips y no pertenece ni representa oficialmente a ninguna de las plataformas mencionadas. Participamos en programas de afiliados y podemos recibir una comisión por compras realizadas mediante nuestros enlaces, sin costo extra para vos.
+  </aside>
 
   <main class="container">
+    <!-- ENCABEZADO -->
+    <header class="header-group">
+      <span class="brand-badge">Meñique Tips • Ofertas y Descuentos</span>
+      <h1>Cupones y Listas de Productos del Día</h1>
+      <p class="subtitle">
+        Elegí una lista de productos seleccionados para aplicar el descuento o probá los cupones generales activos hoy.
+      </p>
+      <div class="notice-pill">
+        <span class="notice-dot" aria-hidden="true"></span>
+        <span>Atención: los cupones tienen cupos limitados y pueden vencer o agotarse sin previo aviso.</span>
+      </div>
+    </header>
 
-    <!-- CUPONES MERCADO LIBRE -->
-    <h2 class="section-title">🚨 ¡Cupones de Mercado Libre activos!</h2>
-
-    <div class="grid">
-
-      <div class="coupon-card">
-        <span class="coupon-label">🎟️ Cupón</span>
-        <div class="coupon-amount">$20.000 OFF</div>
-        <div class="coupon-min">🛒 Compra mínima: <strong>$250.000</strong></div>
-        <a href="https://meli.la/1VGRdnM" target="_blank" rel="nofollow sponsored noopener" class="btn">VER CUPÓN</a>
+    <!-- ========================================================================
+         1) SECCIÓN DE CUPONES GENERALES (1 a 3 cupones activos arriba)
+         ======================================================================== -->
+    <section class="section-block" aria-labelledby="titulo-cupones-generales">
+      <div class="section-header">
+        <span class="section-tag">Descuentos directos</span>
+        <h2 id="titulo-cupones-generales" class="section-title">Cupones Generales del Día</h2>
+        <p class="section-desc">Tocá en "Ver cupón" para abrir el enlace y consultar si sigue con cupo disponible en tu cuenta.</p>
       </div>
 
-      <div class="coupon-card">
-        <span class="coupon-label">🎟️ Cupón</span>
-        <div class="coupon-amount">$45.000 OFF</div>
-        <div class="coupon-min">🛒 Compra mínima: <strong>$500.000</strong></div>
-        <a href="https://meli.la/2mj6KW7" target="_blank" rel="nofollow sponsored noopener" class="btn">VER CUPÓN</a>
+      <!-- Acá se insertan automáticamente los cupones desde el bloque de configuración -->
+      <div id="contenedor-cupones" class="coupons-grid"></div>
+
+      <!-- Botón grande y llamativo al Canal de WhatsApp -->
+      <div class="whatsapp-cta-box reveal-on-scroll">
+        <a
+          class="btn btn-whatsapp-hero btn-shimmer"
+          href="https://whatsapp.com/channel/0029Vb9KYuT8aKvHm2SOXJ40"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.031 2c-5.516 0-9.999 4.486-9.999 10.001 0 1.765.461 3.488 1.338 5.008L2 22l5.125-1.344c1.472.804 3.128 1.228 4.904 1.229h.004c5.515 0 9.998-4.486 9.998-10.001 0-2.672-1.04-5.184-2.928-7.074C17.215 3.041 14.703 2 12.031 2zm5.822 14.122c-.246.693-1.434 1.326-1.992 1.41-.509.076-1.153.108-1.86-.117-.429-.136-.979-.318-1.685-.623-2.966-1.281-4.902-4.269-5.051-4.467-.148-.198-1.206-1.604-1.206-3.06 0-1.455.763-2.171 1.034-2.467.272-.297.593-.371.79-.371.198 0 .395.002.568.011.182.009.426-.069.667.509.247.593.84 2.049.914 2.198.074.148.123.321.025.519-.099.198-.148.321-.296.494-.148.173-.312.386-.445.519-.148.148-.303.309-.13.605.173.297.768 1.268 1.65 2.054 1.134 1.011 2.09 1.325 2.387 1.473.296.148.469.123.642-.074.173-.198.741-.864.939-1.161.198-.297.395-.247.667-.148.272.099 1.729.815 2.025.963.297.148.494.222.568.346.074.123.074.716-.171 1.409z"/>
+          </svg>
+          <span>¡MÁS CUPONES EN MI CANAL DE WHATSAPP!</span>
+        </a>
+        <p class="microtext">Subo avisos apenas salen nuevos cupones. Tu número es 100% privado.</p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         2) SECCIÓN DE LISTAS DE PRODUCTOS (La más importante)
+         ======================================================================== -->
+    <section class="section-block" aria-labelledby="titulo-listas-productos">
+      <div class="section-header">
+        <span class="section-tag">Selección armada por mí</span>
+        <h2 id="titulo-listas-productos" class="section-title">Listas de Productos para Aprovechar con Cupón</h2>
+        <p class="section-desc">
+          Armé estas listas con productos concretos para que llegues rápido al mínimo de compra y aproveches el descuento.
+        </p>
       </div>
 
-      <div class="coupon-card">
-        <span class="coupon-label">🎟️ Cupón</span>
-        <div class="coupon-amount">$80.000 OFF</div>
-        <div class="coupon-min">🛒 Compra mínima: <strong>$1.000.000</strong></div>
-        <a href="https://meli.la/2LS21Ri" target="_blank" rel="nofollow sponsored noopener" class="btn">VER CUPÓN</a>
-      </div>
-
-    </div>
-
-    <!-- CUPÓN ACUMULABLE (azul Mercado Pago) -->
-    <section class="mp-card">
-      <span class="mp-badge">💥 Acumulable con otros cupones</span>
-      <h2>🚨 ¡URGENTE! Dinero disponible en tu cuenta de Mercado Pago</h2>
-      <div class="mp-amount">$12.000 OFF</div>
-      <p class="mp-sub">💸 $12.000 de descuento en Mercado Libre</p>
-      <p class="mp-min">🛒 Compra mínima: $120.000</p>
-      <p class="mp-hurry">‼️ ¡Apurate! Aprovechá este descuentazo y combinalo con otros cupones para ahorrar todavía más. ¡Puede durar poco!</p>
-      <a href="https://meli.la/26KkK2r" target="_blank" rel="nofollow sponsored noopener" class="btn btn-white">VER CUPÓN</a>
+      <!-- Acá se insertan automáticamente las listas desde el bloque de configuración -->
+      <div id="contenedor-listas" class="lists-stack"></div>
     </section>
 
-    <!-- TEMU -->
-    <section class="temu-card">
-      <span class="temu-badge">🎁 Temu</span>
-      <h2>Kit de cupones de Temu</h2>
-      <div class="temu-amount">$120.000</div>
-      <p>Sumá el kit de cupones y aprovechá descuentos en tus compras en Temu.</p>
-      <a href="https://temu.to/k/g196pplqxhl" target="_blank" rel="nofollow sponsored noopener" class="btn btn-temu">VER KIT DE CUPONES</a>
+    <!-- ========================================================================
+         3) TARJETA SEPARADA DE OTRA PLATAFORMA (TEMU)
+         ======================================================================== -->
+    <section class="section-block" aria-labelledby="titulo-otra-plataforma">
+      <div id="contenedor-temu"></div>
     </section>
-
-    <!-- SECCIÓN SEO -->
-    <section class="seo-info">
-      <h3>¿Cómo usar el cupón del día en Mercado Libre?</h3>
-      <p>1. Hacé clic en el botón <strong>"VER CUPÓN"</strong> del descuento que más te convenga.<br>
-         2. Activá el cupón en Mercado Libre y elegí tus productos, cumpliendo la compra mínima indicada.<br>
-         3. Al finalizar tu compra, verificá que el descuento esté aplicado antes de pagar.</p>
-
-      <h3>¿Cada cuánto se actualizan los cupones?</h3>
-      <p>Todos los días verificamos los cupones activos de la plataforma. Recordá que los cupones tienen tope de usos diarios y suelen agotarse rápido.</p>
-    </section>
-
   </main>
 
-  <footer>
-    <p>© 2026 cupondeldia.com.ar - Sitio independiente de recopilación de ofertas. Participamos en el Programa de Afiliados de Mercado Libre y recibimos comisión por compras realizadas a través de nuestros enlaces.</p>
+  <!-- PIE DE PÁGINA CON AVISOS DE AFILIADOS Y CONDICIONES -->
+  <footer class="footer">
+    <ul class="legal-list">
+      <li><strong>Aviso de Afiliados:</strong> Este sitio contiene enlaces de afiliado (identificados con <code>rel="nofollow sponsored"</code>). Si realizás una compra a través de ellos, podemos recibir una comisión sin ningún costo adicional para vos.</li>
+      <li><strong>Vigencia y disponibilidad:</strong> Todos los cupones y promociones están sujetos a términos, condiciones, topes de reintegro y cupos limitados dispuestos por cada comercio. Pueden vencer o agotarse en cualquier momento sin previo aviso.</li>
+      <li><strong>Sitio web independiente:</strong> cupondeldia.com.ar (Meñique Tips) no es un sitio oficial ni está patrocinado o avalado de forma directa por Mercado Libre, Temu ni otras marcas mencionadas.</li>
+    </ul>
   </footer>
 
-  <!-- BOTÓN FLOTANTE WHATSAPP -->
-  <a href="https://whatsapp.com/channel/0029Vb9KYuT8aKvHm2SOXJ40" target="_blank" rel="noopener" class="wa-float" aria-label="Recibir los cupones por WhatsApp">
-    <span class="wa-icon">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      <span class="wa-badge">1</span>
-    </span>
-    <span class="wa-text">¿Querés recibir los cupones por WhatsApp?<small>👉 Hacé clic acá</small></span>
+  <!-- BOTÓN FLOTANTE DE WHATSAPP CON NOTIFICACIÓN -->
+  <a
+    class="floating-wa"
+    href="https://whatsapp.com/channel/0029Vb9KYuT8aKvHm2SOXJ40"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Sumate a mi canal de WhatsApp para recibir nuevos cupones"
+  >
+    <span class="floating-wa-badge" aria-hidden="true">1</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.031 2c-5.516 0-9.999 4.486-9.999 10.001 0 1.765.461 3.488 1.338 5.008L2 22l5.125-1.344c1.472.804 3.128 1.228 4.904 1.229h.004c5.515 0 9.998-4.486 9.998-10.001 0-2.672-1.04-5.184-2.928-7.074C17.215 3.041 14.703 2 12.031 2zm5.822 14.122c-.246.693-1.434 1.326-1.992 1.41-.509.076-1.153.108-1.86-.117-.429-.136-.979-.318-1.685-.623-2.966-1.281-4.902-4.269-5.051-4.467-.148-.198-1.206-1.604-1.206-3.06 0-1.455.763-2.171 1.034-2.467.272-.297.593-.371.79-.371.198 0 .395.002.568.011.182.009.426-.069.667.509.247.593.84 2.049.914 2.198.074.148.123.321.025.519-.099.198-.148.321-.296.494-.148.173-.312.386-.445.519-.148.148-.303.309-.13.605.173.297.768 1.268 1.65 2.054 1.134 1.011 2.09 1.325 2.387 1.473.296.148.469.123.642-.074.173-.198.741-.864.939-1.161.198-.297.395-.247.667-.148.272.099 1.729.815 2.025.963.297.148.494.222.568.346.074.123.074.716-.171 1.409z"/>
+    </svg>
+    <span class="floating-wa-text">Canal de Cupones</span>
   </a>
 
+  <!-- ==========================================================================
+       SCRIPT PRINCIPAL Y BLOQUES DE CONFIGURACIÓN EDITABLES
+       ========================================================================== -->
   <script>
-    // Fecha de hoy automática en la etiqueta
-    const opcionesFecha = { day: 'numeric', month: 'long' };
-    const hoy = new Date().toLocaleDateString('es-AR', opcionesFecha);
-    document.getElementById('fecha-hoy').textContent = 'Activo hoy ' + hoy;
-  </script>
+    /* ==========================================================================
+     * 1) CONFIGURACIÓN DE LISTAS DE PRODUCTOS (EDITÁ ACÁ TUS LISTAS)
+     * --------------------------------------------------------------------------
+     * Para agregar una lista nueva: copiá un bloque {...}, pegalo abajo separado
+     * por una coma (,) y cambiá los textos y el link.
+     * Para borrar una lista: eliminá su bloque {...} completo.
+     *
+     * Campos de cada lista:
+     * - nombre: Título principal (incluí el cupón en el nombre, ej: "LISTA BOLUCOMPRAS + CUPÓN $25.000 OFF").
+     * - cupon: Texto corto del cupón que aplica (ej: "Cupón: $25.000 OFF").
+     * - compraMinima: Monto mínimo requerido (ej: "Compra mínima: $60.000").
+     * - descripcion: Comentario tuyo de 1 o 2 líneas contando qué hay en la lista.
+     * - link: Enlace real a tu lista de productos seleccionada.
+     * - textoBoton: Texto claro indicando que abre la lista de productos.
+     * ========================================================================== */
+    const LISTAS_PRODUCTOS = [
+      {
+        nombre: "LISTA BOLUCOMPRAS + CUPÓN $25.000 OFF",
+        cupon: "Aplica cupón $25.000 OFF",
+        compraMinima: "Compra mínima: $65.000",
+        descripcion: "Separé gadgets para la casa, auriculares, termos y accesorios útiles para sumar al carrito y alcanzar el mínimo de compra sin vueltas.",
+        link: "https://meli.la/ejemplo-lista-bolucompras",
+        textoBoton: "VER LISTA DE PRODUCTOS"
+      },
+      {
+        nombre: "LISTA SETUP Y TECNOLOGÍA + CUPÓN $15.000 OFF",
+        cupon: "Aplica cupón $15.000 OFF",
+        compraMinima: "Compra mínima: $45.000",
+        descripcion: "Periféricos, soportes de notebook, hubs USB-C y luces para armar o mejorar el escritorio aprovechando el descuento activo.",
+        link: "https://meli.la/ejemplo-lista-setup",
+        textoBoton: "VER LISTA DE PRODUCTOS"
+      }
+    ];
 
+    /* ==========================================================================
+     * 2) CONFIGURACIÓN DE CUPONES GENERALES (EDITÁ ACÁ LOS 1 A 3 CUPONES DEL DÍA)
+     * --------------------------------------------------------------------------
+     * Podés dejar 1, 2 o 3 cupones generales vigentes.
+     * Si querés ocultar uno temporalmente sin borrarlo, cambiá `activo: true`
+     * por `activo: false`.
+     * ========================================================================== */
+    const CUPONES_GENERALES = [
+      {
+        activo: true,
+        etiqueta: "Cupón General #1",
+        monto: "$8.000 OFF",
+        compraMinima: "Compra mínima: $35.000",
+        nota: "Sujeto a disponibilidad de cupos en el día",
+        link: "https://meli.la/1VGRdnM"
+      },
+      {
+        activo: true,
+        etiqueta: "Cupón General #2",
+        monto: "$12.000 OFF",
+        compraMinima: "Compra mínima: $50.000",
+        nota: "Aplica en productos seleccionados del enlace",
+        link: "https://meli.la/ejemplo-cupon-2"
+      },
+      {
+        activo: true,
+        etiqueta: "Cupón General #3",
+        monto: "$20.000 OFF",
+        compraMinima: "Compra mínima: $75.000",
+        nota: "Cupos limitados hasta agotar stock de usos",
+        link: "https://meli.la/ejemplo-cupon-3"
+      }
+    ];
+
+    /* ==========================================================================
+     * 3) CONFIGURACIÓN DE TARJETA TEMU (OTRA PLATAFORMA SEPARADA)
+     * --------------------------------------------------------------------------
+     * Si no querés mostrar la tarjeta de Temu, cambiá `mostrar: true` a `false`.
+     * ========================================================================== */
+    const CONFIG_TEMU = {
+      mostrar: true,
+      avisoPlataforma: "Otra plataforma internacional • Temu",
+      titulo: "Pack de Cupones y Ofertas en Temu",
+      descripcion: "Atención: esta promoción pertenece a Temu (una plataforma de compras distinta e independiente de las listas anteriores). Podés revisar el pack de descuentos desde acá.",
+      link: "https://temu.to/m/ejemplo-afiliado",
+      textoBoton: "VER PROMOCIÓN EN TEMU"
+    };
+
+    /* ==========================================================================
+     * RENDERIZADO AUTOMÁTICO (NO HACE FALTA TOCAR NADA DE ACÁ PARA ABAJO)
+     * ========================================================================== */
+    (function renderizarSitio() {
+      // 1. Renderizar Cupones Generales
+      var contenedorCupones = document.getElementById('contenedor-cupones');
+      if (contenedorCupones && Array.isArray(CUPONES_GENERALES)) {
+        var cuponesActivos = CUPONES_GENERALES.filter(function (c) { return c && c.activo !== false; });
+        if (cuponesActivos.length > 1) {
+          contenedorCupones.classList.add('multi-items');
+        }
+        contenedorCupones.innerHTML = cuponesActivos.map(function (cupon) {
+          return (
+            '<article class="card reveal-on-scroll">' +
+              '<span class="coupon-badge">' + escaparHTML(cupon.etiqueta || 'Cupón del día') + '</span>' +
+              '<p class="coupon-amount">' + escaparHTML(cupon.monto) + '</p>' +
+              '<p class="coupon-min">' + escaparHTML(cupon.compraMinima) + '</p>' +
+              (cupon.nota ? '<p class="coupon-note">' + escaparHTML(cupon.nota) + '</p>' : '') +
+              '<a class="btn btn-primary btn-shimmer" href="' + escaparAtributo(cupon.link) + '" target="_blank" rel="nofollow sponsored noopener">' +
+                '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+                  '<path d="M22 10V6c0-1.1-.9-2-2-2H4c-1.1 0-1.99.9-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2s.9-2 2-2zm-9 7.5h-2v-2h2v2zm0-4.5h-2v-2h2v2zm0-4.5h-2v-2h2v2z"/>' +
+                '</svg>' +
+                '<span>VER CUPÓN</span>' +
+              '</a>' +
+            '</article>'
+          );
+        }).join('');
+      }
+
+      // 2. Renderizar Listas de Productos
+      var contenedorListas = document.getElementById('contenedor-listas');
+      if (contenedorListas && Array.isArray(LISTAS_PRODUCTOS)) {
+        contenedorListas.innerHTML = LISTAS_PRODUCTOS.map(function (lista) {
+          return (
+            '<article class="card list-card reveal-on-scroll">' +
+              '<div class="list-card-header">' +
+                '<span class="list-coupon-pill">' + escaparHTML(lista.cupon) + '</span>' +
+                '<span class="list-min-pill">' + escaparHTML(lista.compraMinima) + '</span>' +
+              '</div>' +
+              '<h3 class="list-title">' + escaparHTML(lista.nombre) + '</h3>' +
+              '<p class="list-description">' + escaparHTML(lista.descripcion) + '</p>' +
+              '<a class="btn btn-primary btn-shimmer" href="' + escaparAtributo(lista.link) + '" target="_blank" rel="nofollow sponsored noopener">' +
+                '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+                  '<path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>' +
+                '</svg>' +
+                '<span>' + escaparHTML(lista.textoBoton || 'VER LISTA DE PRODUCTOS') + '</span>' +
+              '</a>' +
+            '</article>'
+          );
+        }).join('');
+      }
+
+      // 3. Renderizar Tarjeta Separada de Temu
+      var contenedorTemu = document.getElementById('contenedor-temu');
+      if (contenedorTemu && CONFIG_TEMU && CONFIG_TEMU.mostrar) {
+        contenedorTemu.innerHTML = (
+          '<article class="external-platform-card reveal-on-scroll">' +
+            '<span class="external-tag">' + escaparHTML(CONFIG_TEMU.avisoPlataforma) + '</span>' +
+            '<h3 id="titulo-otra-plataforma" class="external-title">' + escaparHTML(CONFIG_TEMU.titulo) + '</h3>' +
+            '<p class="external-desc">' + escaparHTML(CONFIG_TEMU.descripcion) + '</p>' +
+            '<a class="btn btn-external btn-shimmer" href="' + escaparAtributo(CONFIG_TEMU.link) + '" target="_blank" rel="nofollow sponsored noopener">' +
+              '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+                '<path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>' +
+              '</svg>' +
+              '<span>' + escaparHTML(CONFIG_TEMU.textoBoton) + '</span>' +
+            '</a>' +
+          '</article>'
+        );
+      }
+
+      // 4. Animación suave al hacer scroll (IntersectionObserver) respetando prefers-reduced-motion
+      var elementosReveal = document.querySelectorAll('.reveal-on-scroll');
+      var prefiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefiereMenosMovimiento || !('IntersectionObserver' in window)) {
+        elementosReveal.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      } else {
+        var observador = new IntersectionObserver(function (entradas, obs) {
+          entradas.forEach(function (entrada) {
+            if (entrada.isIntersecting) {
+              entrada.target.classList.add('is-visible');
+              obs.unobserve(entrada.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -24px 0px'
+        });
+
+        elementosReveal.forEach(function (el, idx) {
+          el.style.transitionDelay = (idx * 55) + 'ms';
+          observador.observe(el);
+        });
+      }
+
+      function escaparHTML(texto) {
+        return String(texto || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function escaparAtributo(url) {
+        return String(url || '#').replace(/"/g, '&quot;');
+      }
+    })();
+  </script>
 </body>
 </html>
