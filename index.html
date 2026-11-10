@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cupones y Listas del Día — Meñique Tips (cupondeldia.com.ar)</title>
-  <meta name="description" content="Encontrá las listas de productos seleccionadas y los cupones de descuento activos hoy por Meñique Tips. Tocá y aprovechá las ofertas desde el enlace.">
+  <title>Listas y Cupones del Día — El Cuponero (cupondeldia.com.ar)</title>
+  <meta name="description" content="Encontrá las listas de productos con cupón de regalo activas hoy por El Cuponero. El cupón para aplicar se encuentra en el nombre de la lista.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#fe4a2b">
 
   <!-- Open Graph / WhatsApp / Redes -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
-  <meta property="og:site_name" content="Meñique Tips — Cupón del Día">
-  <meta property="og:title" content="Cupones y Listas de Productos del Día — Meñique Tips">
-  <meta property="og:description" content="Mirá las listas de productos recomendados y los cupones de descuento disponibles hoy.">
+  <meta property="og:site_name" content="El Cuponero — Cupón del Día">
+  <meta property="og:title" content="Listas y Cupones del Día — El Cuponero">
+  <meta property="og:description" content="¡Aprovechá estos descuentos antes de que se terminen! El cupón para aplicar se encuentra en el nombre de la lista.">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Cupones y Listas de Productos del Día — Meñique Tips">
-  <meta name="twitter:description" content="Mirá las listas de productos recomendados y los cupones de descuento disponibles hoy.">
+  <meta name="twitter:title" content="Listas y Cupones del Día — El Cuponero">
+  <meta name="twitter:description" content="¡Aprovechá estos descuentos antes de que se terminen! El cupón para aplicar se encuentra en el nombre de la lista.">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +37,7 @@
       --primary-hover: #e43b1d;
       --primary-active: #c93217;
       --primary-soft: rgba(254, 74, 43, 0.10);
-      --primary-border: rgba(254, 74, 43, 0.28);
+      --primary-border: rgba(254, 74, 43, 0.30);
       --primary-glow: rgba(254, 74, 43, 0.52);
 
       /* WhatsApp */
@@ -47,7 +47,6 @@
 
       /* Plataforma externa (Temu) - Tono neutro oscuro diferenciado */
       --external-bg: #222226;
-      --external-accent: #ff6f52;
     }
 
     *, *::before, *::after {
@@ -76,34 +75,43 @@
       padding: 16px 16px 96px;
     }
 
-    /* Aviso superior de sitio independiente (Cumplimiento de afiliados) */
-    .top-disclaimer {
+    /* Aviso superior destacado: dónde encontrar el cupón */
+    .top-banner {
       width: 100%;
-      max-width: 680px;
-      background-color: var(--surface-alt);
-      border: 1px solid var(--line);
+      max-width: 640px;
+      background-color: var(--primary-soft);
+      border: 1.5px solid var(--primary-border);
       border-radius: 14px;
-      padding: 10px 14px;
-      margin-bottom: 20px;
-      font-size: 0.78rem;
-      line-height: 1.4;
-      color: var(--text-secondary);
+      padding: 12px 16px;
+      margin-bottom: 22px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
-    .top-disclaimer strong {
-      color: var(--text);
-      font-weight: 700;
+    .top-banner-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      flex-shrink: 0;
+      box-shadow: 0 0 8px var(--primary);
     }
 
     .container {
       width: 100%;
-      max-width: 680px;
+      max-width: 640px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 32px;
+      gap: 28px;
     }
 
     /* Encabezado */
@@ -119,13 +127,12 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 5px 12px;
+      padding: 5px 14px;
       border-radius: 999px;
-      background-color: var(--primary-soft);
-      border: 1px solid var(--primary-border);
-      color: var(--primary);
-      font-size: 0.78rem;
-      font-weight: 700;
+      background-color: var(--primary);
+      color: #FFFFFF;
+      font-size: 0.8rem;
+      font-weight: 800;
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
@@ -133,7 +140,7 @@
     h1 {
       font-family: 'Bricolage Grotesque', sans-serif;
       font-weight: 800;
-      font-size: clamp(1.9rem, 6.5vw, 2.65rem);
+      font-size: clamp(1.85rem, 6.5vw, 2.55rem);
       line-height: 1.06;
       letter-spacing: -0.03em;
       color: var(--text);
@@ -142,7 +149,7 @@
 
     .subtitle {
       font-size: 0.95rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-secondary);
       max-width: 540px;
       line-height: 1.45;
@@ -155,96 +162,40 @@
       background-color: var(--surface);
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 6px 14px;
+      padding: 7px 14px;
       font-size: 0.8rem;
       font-weight: 600;
       color: var(--text-secondary);
     }
 
-    .notice-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: var(--primary);
-      display: inline-block;
-      box-shadow: 0 0 8px var(--primary);
-    }
-
-    /* Títulos de sección */
+    /* ==========================================================================
+       SECCIÓN UNIFICADA: LISTAS + CUPÓN DE REGALO RESALTADO EN GRANDE
+       ========================================================================== */
     .section-block {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-    }
-
-    .section-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      text-align: center;
-    }
-
-    .section-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--primary);
-    }
-
-    .section-title {
-      font-family: 'Bricolage Grotesque', sans-serif;
-      font-weight: 800;
-      font-size: clamp(1.35rem, 4.8vw, 1.75rem);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: var(--text);
-    }
-
-    .section-desc {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      max-width: 520px;
-      line-height: 1.4;
-    }
-
-    /* ==========================================================================
-       TARJETAS Y GRILLAS
-       ========================================================================== */
-    .coupons-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      width: 100%;
-    }
-
-    @media (min-width: 580px) {
-      .coupons-grid.multi-items {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      }
+      gap: 18px;
     }
 
     .lists-stack {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 20px;
       width: 100%;
     }
 
     .card {
-      background-color: var(--surface);
-      border: 1.5px solid var(--line);
-      border-radius: 22px;
-      padding: 22px 18px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F7 100%);
+      border: 2px solid var(--primary-border);
+      border-radius: 24px;
+      padding: 24px 20px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: center;
       text-align: center;
       gap: 14px;
-      box-shadow: 0 6px 20px -6px rgba(29, 29, 31, 0.06);
+      box-shadow: 0 8px 24px -6px rgba(29, 29, 31, 0.07);
       transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
                   box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
                   border-color 0.28s ease;
@@ -252,105 +203,90 @@
 
     .card:hover {
       transform: scale(1.03) translateY(-4px);
-      box-shadow: 0 18px 36px -8px rgba(254, 74, 43, 0.18),
+      box-shadow: 0 18px 38px -8px rgba(254, 74, 43, 0.22),
                   0 8px 18px -6px rgba(29, 29, 31, 0.08);
-      border-color: var(--primary-border);
+      border-color: var(--primary);
     }
 
-    /* Tarjeta de cupón general */
-    .coupon-badge {
+    /* Nombre de la categoría / lista arriba */
+    .list-name-tag {
       display: inline-block;
       background-color: var(--primary-soft);
       color: var(--primary);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 999px;
-      letter-spacing: 0.03em;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: clamp(0.95rem, 3.6vw, 1.15rem);
+      font-weight: 800;
+      padding: 7px 16px;
+      border-radius: 12px;
+      letter-spacing: 0.01em;
       text-transform: uppercase;
+      border: 1px solid var(--primary-border);
     }
 
-    .coupon-amount {
+    /* Bloque central resaltado en grande con el Cupón + Descuento */
+    .coupon-highlight-box {
+      width: 100%;
+      background-color: var(--surface-alt);
+      border: 1.5px dashed var(--primary-border);
+      border-radius: 18px;
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .coupon-gift-label {
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+    }
+
+    .coupon-big-discount {
       font-family: 'Bricolage Grotesque', sans-serif;
       font-weight: 800;
-      font-size: clamp(1.85rem, 6vw, 2.35rem);
-      line-height: 1.05;
+      font-size: clamp(2.1rem, 8.5vw, 3rem);
+      line-height: 1.02;
       letter-spacing: -0.03em;
       color: var(--text);
     }
 
-    .coupon-min {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      background-color: var(--surface-alt);
-      padding: 6px 12px;
-      border-radius: 10px;
-      width: 100%;
-    }
-
-    .coupon-note {
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-      line-height: 1.35;
-    }
-
-    /* Tarjeta de Lista de Productos (Sección principal) */
-    .list-card {
-      position: relative;
-      align-items: stretch;
-      text-align: left;
-      padding: 24px 20px;
-      border: 2px solid var(--primary-border);
-      background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F7 100%);
-    }
-
-    .list-card-header {
+    /* Info de compra mínima y validez para productos nuevos */
+    .meta-pills {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       gap: 8px;
+      width: 100%;
     }
 
-    .list-coupon-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background-color: var(--primary);
-      color: #FFFFFF;
-      font-size: 0.78rem;
-      font-weight: 700;
-      padding: 5px 12px;
-      border-radius: 999px;
-      letter-spacing: 0.02em;
-    }
-
-    .list-min-pill {
-      display: inline-flex;
-      align-items: center;
-      background-color: var(--surface-alt);
-      color: var(--text);
-      font-size: 0.78rem;
-      font-weight: 700;
-      padding: 5px 11px;
-      border-radius: 999px;
+    .min-purchase-pill {
+      background-color: var(--surface);
       border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
     }
 
-    .list-title {
-      font-family: 'Bricolage Grotesque', sans-serif;
-      font-weight: 800;
-      font-size: clamp(1.25rem, 4.5vw, 1.55rem);
-      line-height: 1.18;
-      color: var(--text);
-      letter-spacing: -0.02em;
+    .applies-all-pill {
+      background-color: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
     }
 
     .list-description {
       font-size: 0.92rem;
       line-height: 1.45;
       color: var(--text-secondary);
+      max-width: 540px;
     }
 
     /* ==========================================================================
@@ -361,11 +297,11 @@
       overflow: hidden;
       z-index: 1;
       width: 100%;
-      min-height: 54px;
+      min-height: 56px;
       padding: 14px 20px;
       border-radius: 16px;
       font-family: 'DM Sans', sans-serif;
-      font-size: 1rem;
+      font-size: 1.02rem;
       font-weight: 700;
       line-height: 1.2;
       text-decoration: none;
@@ -382,8 +318,8 @@
     }
 
     .btn svg {
-      width: 20px;
-      height: 20px;
+      width: 21px;
+      height: 21px;
       fill: currentColor;
       flex-shrink: 0;
     }
@@ -502,7 +438,7 @@
       flex-direction: column;
       align-items: center;
       gap: 8px;
-      margin-top: 4px;
+      margin-top: 6px;
     }
 
     .microtext {
@@ -551,9 +487,10 @@
 
     .external-title {
       font-family: 'Bricolage Grotesque', sans-serif;
-      font-size: clamp(1.3rem, 4.5vw, 1.6rem);
+      font-size: clamp(1.35rem, 4.8vw, 1.7rem);
       font-weight: 800;
       color: #FFFFFF;
+      letter-spacing: -0.02em;
     }
 
     .external-desc {
@@ -680,12 +617,12 @@
     }
 
     /* ==========================================================================
-       PIE DE PÁGINA (Avisos legales y de afiliados)
+       PIE DE PÁGINA (Avisos legales y de afiliados SOLO ACÁ ABAJO)
        ========================================================================== */
     .footer {
       width: 100%;
-      max-width: 680px;
-      margin-top: 40px;
+      max-width: 640px;
+      margin-top: 44px;
       padding-top: 20px;
       border-top: 1px solid var(--line);
       text-align: center;
@@ -727,37 +664,31 @@
 </head>
 <body>
 
-  <!-- AVISO SUPERIOR DE SITIO INDEPENDIENTE Y PROGRAMA DE AFILIADOS -->
-  <aside class="top-disclaimer" aria-label="Aviso de sitio independiente">
-    <strong>Sitio independiente y no oficial:</strong> Esta página es administrada por Meñique Tips y no pertenece ni representa oficialmente a ninguna de las plataformas mencionadas. Participamos en programas de afiliados y podemos recibir una comisión por compras realizadas mediante nuestros enlaces, sin costo extra para vos.
-  </aside>
+  <!-- AVISO SUPERIOR: DÓNDE ESTÁ EL CUPÓN -->
+  <div class="top-banner" role="region" aria-label="Instrucción para usar el cupón">
+    <span class="top-banner-dot" aria-hidden="true"></span>
+    <span>El cupón para aplicar se encuentra en el nombre de la lista.</span>
+  </div>
 
   <main class="container">
     <!-- ENCABEZADO -->
     <header class="header-group">
-      <span class="brand-badge">Meñique Tips • Ofertas y Descuentos</span>
-      <h1>Cupones y Listas de Productos del Día</h1>
+      <span class="brand-badge">El Cuponero • Especial 11.11</span>
+      <h1>🚨🔥 ¡Nuevos Cupones y Listas del Día!</h1>
       <p class="subtitle">
-        Elegí una lista de productos seleccionados para aplicar el descuento o probá los cupones generales activos hoy.
+        💸 ¡Aprovechá estos descuentos antes de que se terminen! Entrá a la lista según tu compra y mirá el código del cupón en el nombre de la lista.
       </p>
       <div class="notice-pill">
-        <span class="notice-dot" aria-hidden="true"></span>
-        <span>Atención: los cupones tienen cupos limitados y pueden vencer o agotarse sin previo aviso.</span>
+        <span>‼️ ¡No te duermas! Estos cupones tienen cupos limitados y pueden durar poco.</span>
       </div>
     </header>
 
     <!-- ========================================================================
-         1) SECCIÓN DE CUPONES GENERALES (1 a 3 cupones activos arriba)
+         SECCIÓN PRINCIPAL UNIFICADA: LISTAS + CUPÓN DE REGALO RESALTADO EN GRANDE
          ======================================================================== -->
-    <section class="section-block" aria-labelledby="titulo-cupones-generales">
-      <div class="section-header">
-        <span class="section-tag">Descuentos directos</span>
-        <h2 id="titulo-cupones-generales" class="section-title">Cupones Generales del Día</h2>
-        <p class="section-desc">Tocá en "Ver cupón" para abrir el enlace y consultar si sigue con cupo disponible en tu cuenta.</p>
-      </div>
-
-      <!-- Acá se insertan automáticamente los cupones desde el bloque de configuración -->
-      <div id="contenedor-cupones" class="coupons-grid"></div>
+    <section class="section-block" aria-label="Listas de productos con cupón de regalo">
+      <!-- Acá se insertan automáticamente las listas con cupón desde la configuración -->
+      <div id="contenedor-listas" class="lists-stack"></div>
 
       <!-- Botón grande y llamativo al Canal de WhatsApp -->
       <div class="whatsapp-cta-box reveal-on-scroll">
@@ -777,35 +708,19 @@
     </section>
 
     <!-- ========================================================================
-         2) SECCIÓN DE LISTAS DE PRODUCTOS (La más importante)
-         ======================================================================== -->
-    <section class="section-block" aria-labelledby="titulo-listas-productos">
-      <div class="section-header">
-        <span class="section-tag">Selección armada por mí</span>
-        <h2 id="titulo-listas-productos" class="section-title">Listas de Productos para Aprovechar con Cupón</h2>
-        <p class="section-desc">
-          Armé estas listas con productos concretos para que llegues rápido al mínimo de compra y aproveches el descuento.
-        </p>
-      </div>
-
-      <!-- Acá se insertan automáticamente las listas desde el bloque de configuración -->
-      <div id="contenedor-listas" class="lists-stack"></div>
-    </section>
-
-    <!-- ========================================================================
-         3) TARJETA SEPARADA DE OTRA PLATAFORMA (TEMU)
+         TARJETA SEPARADA DE OTRA PLATAFORMA (TEMU)
          ======================================================================== -->
     <section class="section-block" aria-labelledby="titulo-otra-plataforma">
       <div id="contenedor-temu"></div>
     </section>
   </main>
 
-  <!-- PIE DE PÁGINA CON AVISOS DE AFILIADOS Y CONDICIONES -->
+  <!-- PIE DE PÁGINA CON TODOS LOS AVISOS LEGALES Y DE AFILIADOS AL FONDO -->
   <footer class="footer">
     <ul class="legal-list">
-      <li><strong>Aviso de Afiliados:</strong> Este sitio contiene enlaces de afiliado (identificados con <code>rel="nofollow sponsored"</code>). Si realizás una compra a través de ellos, podemos recibir una comisión sin ningún costo adicional para vos.</li>
-      <li><strong>Vigencia y disponibilidad:</strong> Todos los cupones y promociones están sujetos a términos, condiciones, topes de reintegro y cupos limitados dispuestos por cada comercio. Pueden vencer o agotarse en cualquier momento sin previo aviso.</li>
-      <li><strong>Sitio web independiente:</strong> cupondeldia.com.ar (Meñique Tips) no es un sitio oficial ni está patrocinado o avalado de forma directa por Mercado Libre, Temu ni otras marcas mencionadas.</li>
+      <li><strong>Sitio independiente y no oficial:</strong> Esta página es administrada por El Cuponero (cupondeldia.com.ar) y no pertenece ni representa oficialmente a Mercado Libre, Temu ni a ninguna de las plataformas mencionadas.</li>
+      <li><strong>Aviso de Afiliados:</strong> Este sitio contiene enlaces de afiliado. Si realizás una compra a través de ellos, podemos recibir una comisión sin ningún costo adicional para vos.</li>
+      <li><strong>Vigencia y disponibilidad:</strong> Todos los cupones tienen cupos limitados y pueden vencer o agotarse sin previo aviso.</li>
     </ul>
   </footer>
 
@@ -825,150 +740,114 @@
   </a>
 
   <!-- ==========================================================================
-       SCRIPT PRINCIPAL Y BLOQUES DE CONFIGURACIÓN EDITABLES
+       SCRIPT PRINCIPAL Y BLOQUE ÚNICO DE CONFIGURACIÓN EDITABLE
        ========================================================================== -->
   <script>
     /* ==========================================================================
-     * 1) CONFIGURACIÓN DE LISTAS DE PRODUCTOS (EDITÁ ACÁ TUS LISTAS)
+     * 1) CONFIGURACIÓN DE LISTAS CON CUPÓN (EDITÁ ACÁ TUS LISTAS Y CUPONES)
      * --------------------------------------------------------------------------
-     * Para agregar una lista nueva: copiá un bloque {...}, pegalo abajo separado
-     * por una coma (,) y cambiá los textos y el link.
-     * Para borrar una lista: eliminá su bloque {...} completo.
+     * Cada tarjeta es una lista real de productos que trae el cupón en su nombre.
+     * Podés agregar, borrar o desactivar (`activo: false`) las que quieras.
      *
-     * Campos de cada lista:
-     * - nombre: Título principal (incluí el cupón en el nombre, ej: "LISTA BOLUCOMPRAS + CUPÓN $25.000 OFF").
-     * - cupon: Texto corto del cupón que aplica (ej: "Cupón: $25.000 OFF").
-     * - compraMinima: Monto mínimo requerido (ej: "Compra mínima: $60.000").
-     * - descripcion: Comentario tuyo de 1 o 2 líneas contando qué hay en la lista.
-     * - link: Enlace real a tu lista de productos seleccionada.
-     * - textoBoton: Texto claro indicando que abre la lista de productos.
+     * Campos de cada tarjeta:
+     * - activo: true para mostrarla, false para ocultarla sin borrarla.
+     * - nombreLista: Título arriba de la tarjeta (ej: "🛒 CUPONES PARA COMPRAS CHICAS").
+     * - cuponDestacado: Texto grande que resalta el descuento (ej: "🎟️ $10.000 OFF").
+     * - compraMinima: Monto mínimo requerido (ej: "🛒 Compra mínima: $150.000").
+     * - aplicaEn: Aclaración de dónde aplica.
+     * - descripcion: Comentario tuyo de 1 o 2 líneas sobre la lista.
+     * - link: Enlace de afiliado a tu lista de productos.
+     * - textoBoton: Texto del botón que lleva a la lista.
      * ========================================================================== */
-    const LISTAS_PRODUCTOS = [
+    const LISTAS_CON_CUPON = [
       {
-        nombre: "LISTA BOLUCOMPRAS + CUPÓN $25.000 OFF",
-        cupon: "Aplica cupón $25.000 OFF",
-        compraMinima: "Compra mínima: $65.000",
-        descripcion: "Separé gadgets para la casa, auriculares, termos y accesorios útiles para sumar al carrito y alcanzar el mínimo de compra sin vueltas.",
-        link: "https://meli.la/ejemplo-lista-bolucompras",
-        textoBoton: "VER LISTA DE PRODUCTOS"
+        activo: true,
+        nombreLista: "🛒 CUPONES PARA COMPRAS CHICAS",
+        cuponDestacado: "🎟️ $10.000 OFF",
+        compraMinima: "🛒 Compra mínima: $150.000",
+        aplicaEn: "Aplica para cualquier producto de Mercado Libre NUEVO",
+        descripcion: "Entrá a la lista para ver el código del cupón arriba de todo en el título y aprovechalo antes de que se agote.",
+        link: "https://meli.la/1VGRdnM",
+        textoBoton: "VER LISTA Y CUPÓN"
       },
       {
-        nombre: "LISTA SETUP Y TECNOLOGÍA + CUPÓN $15.000 OFF",
-        cupon: "Aplica cupón $15.000 OFF",
-        compraMinima: "Compra mínima: $45.000",
-        descripcion: "Periféricos, soportes de notebook, hubs USB-C y luces para armar o mejorar el escritorio aprovechando el descuento activo.",
-        link: "https://meli.la/ejemplo-lista-setup",
-        textoBoton: "VER LISTA DE PRODUCTOS"
+        activo: true,
+        nombreLista: "💰 CUPONES PARA COMPRAS MEDIANAS",
+        cuponDestacado: "🎟️ $20.000 OFF",
+        compraMinima: "🛒 Compra mínima: $250.000",
+        aplicaEn: "Aplica para cualquier producto de Mercado Libre NUEVO",
+        descripcion: "Ideal para compras intermedias o sumar varios productos al carrito. El cupón para aplicar figura en el nombre de la lista.",
+        link: "https://meli.la/2mj6KW7",
+        textoBoton: "VER LISTA Y CUPÓN"
+      },
+      {
+        activo: true,
+        nombreLista: "🔥 CUPONES PARA COMPRAS GRANDES",
+        cuponDestacado: "🎟️ $45.000 OFF",
+        compraMinima: "🛒 Compra mínima: $500.000",
+        aplicaEn: "Aplica para cualquier producto de Mercado Libre NUEVO",
+        descripcion: "El descuento más fuerte activo hoy para tecnología, electro o compras grandes. Mirá el código en el título de la lista.",
+        link: "https://meli.la/2LS21Ri",
+        textoBoton: "VER LISTA Y CUPÓN"
       }
     ];
 
     /* ==========================================================================
-     * 2) CONFIGURACIÓN DE CUPONES GENERALES (EDITÁ ACÁ LOS 1 A 3 CUPONES DEL DÍA)
-     * --------------------------------------------------------------------------
-     * Podés dejar 1, 2 o 3 cupones generales vigentes.
-     * Si querés ocultar uno temporalmente sin borrarlo, cambiá `activo: true`
-     * por `activo: false`.
-     * ========================================================================== */
-    const CUPONES_GENERALES = [
-      {
-        activo: true,
-        etiqueta: "Cupón General #1",
-        monto: "$8.000 OFF",
-        compraMinima: "Compra mínima: $35.000",
-        nota: "Sujeto a disponibilidad de cupos en el día",
-        link: "https://meli.la/1VGRdnM"
-      },
-      {
-        activo: true,
-        etiqueta: "Cupón General #2",
-        monto: "$12.000 OFF",
-        compraMinima: "Compra mínima: $50.000",
-        nota: "Aplica en productos seleccionados del enlace",
-        link: "https://meli.la/ejemplo-cupon-2"
-      },
-      {
-        activo: true,
-        etiqueta: "Cupón General #3",
-        monto: "$20.000 OFF",
-        compraMinima: "Compra mínima: $75.000",
-        nota: "Cupos limitados hasta agotar stock de usos",
-        link: "https://meli.la/ejemplo-cupon-3"
-      }
-    ];
-
-    /* ==========================================================================
-     * 3) CONFIGURACIÓN DE TARJETA TEMU (OTRA PLATAFORMA SEPARADA)
+     * 2) CONFIGURACIÓN DE TARJETA TEMU (OTRA PLATAFORMA SEPARADA)
      * --------------------------------------------------------------------------
      * Si no querés mostrar la tarjeta de Temu, cambiá `mostrar: true` a `false`.
      * ========================================================================== */
     const CONFIG_TEMU = {
       mostrar: true,
       avisoPlataforma: "Otra plataforma internacional • Temu",
-      titulo: "Pack de Cupones y Ofertas en Temu",
-      descripcion: "Atención: esta promoción pertenece a Temu (una plataforma de compras distinta e independiente de las listas anteriores). Podés revisar el pack de descuentos desde acá.",
-      link: "https://temu.to/m/ejemplo-afiliado",
-      textoBoton: "VER PROMOCIÓN EN TEMU"
+      titulo: "KIT CUPONES TEMU 120.000 PESOS",
+      descripcion: "Atención: esta promoción pertenece a Temu (una plataforma de compras distinta e independiente de las listas anteriores). Podés reclamar el kit desde acá.",
+      link: "https://temu.to/k/g196pplqxhl",
+      textoBoton: "VER KIT DE CUPONES EN TEMU"
     };
 
     /* ==========================================================================
      * RENDERIZADO AUTOMÁTICO (NO HACE FALTA TOCAR NADA DE ACÁ PARA ABAJO)
      * ========================================================================== */
     (function renderizarSitio() {
-      // 1. Renderizar Cupones Generales
-      var contenedorCupones = document.getElementById('contenedor-cupones');
-      if (contenedorCupones && Array.isArray(CUPONES_GENERALES)) {
-        var cuponesActivos = CUPONES_GENERALES.filter(function (c) { return c && c.activo !== false; });
-        if (cuponesActivos.length > 1) {
-          contenedorCupones.classList.add('multi-items');
-        }
-        contenedorCupones.innerHTML = cuponesActivos.map(function (cupon) {
+      // 1. Renderizar Listas con Cupón Resaltado en Grande
+      var contenedorListas = document.getElementById('contenedor-listas');
+      if (contenedorListas && Array.isArray(LISTAS_CON_CUPON)) {
+        var listasActivas = LISTAS_CON_CUPON.filter(function (item) {
+          return item && item.activo !== false;
+        });
+
+        contenedorListas.innerHTML = listasActivas.map(function (item) {
           return (
             '<article class="card reveal-on-scroll">' +
-              '<span class="coupon-badge">' + escaparHTML(cupon.etiqueta || 'Cupón del día') + '</span>' +
-              '<p class="coupon-amount">' + escaparHTML(cupon.monto) + '</p>' +
-              '<p class="coupon-min">' + escaparHTML(cupon.compraMinima) + '</p>' +
-              (cupon.nota ? '<p class="coupon-note">' + escaparHTML(cupon.nota) + '</p>' : '') +
-              '<a class="btn btn-primary btn-shimmer" href="' + escaparAtributo(cupon.link) + '" target="_blank" rel="nofollow sponsored noopener">' +
+              '<span class="list-name-tag">' + escaparHTML(item.nombreLista) + '</span>' +
+              '<div class="coupon-highlight-box">' +
+                '<span class="coupon-gift-label">El cupón está en el nombre de la lista</span>' +
+                '<p class="coupon-big-discount">' + escaparHTML(item.cuponDestacado) + '</p>' +
+              '</div>' +
+              '<div class="meta-pills">' +
+                '<span class="min-purchase-pill">' + escaparHTML(item.compraMinima) + '</span>' +
+                (item.aplicaEn ? '<span class="applies-all-pill">' + escaparHTML(item.aplicaEn) + '</span>' : '') +
+              '</div>' +
+              (item.descripcion ? '<p class="list-description">' + escaparHTML(item.descripcion) + '</p>' : '') +
+              '<a class="btn btn-primary btn-shimmer" href="' + escaparAtributo(item.link) + '" target="_blank" rel="nofollow sponsored noopener">' +
                 '<svg viewBox="0 0 24 24" aria-hidden="true">' +
                   '<path d="M22 10V6c0-1.1-.9-2-2-2H4c-1.1 0-1.99.9-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2s.9-2 2-2zm-9 7.5h-2v-2h2v2zm0-4.5h-2v-2h2v2zm0-4.5h-2v-2h2v2z"/>' +
                 '</svg>' +
-                '<span>VER CUPÓN</span>' +
+                '<span>' + escaparHTML(item.textoBoton || 'VER LISTA Y CUPÓN') + '</span>' +
               '</a>' +
             '</article>'
           );
         }).join('');
       }
 
-      // 2. Renderizar Listas de Productos
-      var contenedorListas = document.getElementById('contenedor-listas');
-      if (contenedorListas && Array.isArray(LISTAS_PRODUCTOS)) {
-        contenedorListas.innerHTML = LISTAS_PRODUCTOS.map(function (lista) {
-          return (
-            '<article class="card list-card reveal-on-scroll">' +
-              '<div class="list-card-header">' +
-                '<span class="list-coupon-pill">' + escaparHTML(lista.cupon) + '</span>' +
-                '<span class="list-min-pill">' + escaparHTML(lista.compraMinima) + '</span>' +
-              '</div>' +
-              '<h3 class="list-title">' + escaparHTML(lista.nombre) + '</h3>' +
-              '<p class="list-description">' + escaparHTML(lista.descripcion) + '</p>' +
-              '<a class="btn btn-primary btn-shimmer" href="' + escaparAtributo(lista.link) + '" target="_blank" rel="nofollow sponsored noopener">' +
-                '<svg viewBox="0 0 24 24" aria-hidden="true">' +
-                  '<path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>' +
-                '</svg>' +
-                '<span>' + escaparHTML(lista.textoBoton || 'VER LISTA DE PRODUCTOS') + '</span>' +
-              '</a>' +
-            '</article>'
-          );
-        }).join('');
-      }
-
-      // 3. Renderizar Tarjeta Separada de Temu
+      // 2. Renderizar Tarjeta Separada de Temu
       var contenedorTemu = document.getElementById('contenedor-temu');
       if (contenedorTemu && CONFIG_TEMU && CONFIG_TEMU.mostrar) {
         contenedorTemu.innerHTML = (
           '<article class="external-platform-card reveal-on-scroll">' +
             '<span class="external-tag">' + escaparHTML(CONFIG_TEMU.avisoPlataforma) + '</span>' +
-            '<h3 id="titulo-otra-plataforma" class="external-title">' + escaparHTML(CONFIG_TEMU.titulo) + '</h3>' +
+            '<h2 id="titulo-otra-plataforma" class="external-title">' + escaparHTML(CONFIG_TEMU.titulo) + '</h2>' +
             '<p class="external-desc">' + escaparHTML(CONFIG_TEMU.descripcion) + '</p>' +
             '<a class="btn btn-external btn-shimmer" href="' + escaparAtributo(CONFIG_TEMU.link) + '" target="_blank" rel="nofollow sponsored noopener">' +
               '<svg viewBox="0 0 24 24" aria-hidden="true">' +
@@ -980,7 +859,7 @@
         );
       }
 
-      // 4. Animación suave al hacer scroll (IntersectionObserver) respetando prefers-reduced-motion
+      // 3. Animación suave al hacer scroll respetando prefers-reduced-motion
       var elementosReveal = document.querySelectorAll('.reveal-on-scroll');
       var prefiereMenosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
